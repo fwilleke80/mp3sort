@@ -80,7 +80,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("sourceFolder", type=str, default=None)
     parser.add_argument("-d", "--dest", dest="destBaseFolder", type=str, default=None, metavar="DESTFOLDER", help="Destination folder")
-    parser.add_argument("-f", "--format", dest="folderFormat", type=str, default=DEFAULT_FOLDERTEMPLATE, metavar="FOLDERFORMAT", help="Format for destination folders (supported placeholders: $artist, $album, $year)")
+    parser.add_argument("-f", "--format", dest="folderFormat", type=str, default=DEFAULT_FOLDERTEMPLATE, metavar="FOLDERFORMAT", help="Format for destination folders (supported placeholders: $artist, $album, $year, $albumartist)")
     parser.add_argument("-p", "--preview", action="store_true", help="Only show destination preview, don't actually move files.")
     args = parser.parse_args()
 
