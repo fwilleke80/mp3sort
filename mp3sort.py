@@ -34,7 +34,7 @@ def get_file_metadata(filePath):
 
 
 def iterate_folder(sourceFolder):
-    """Iterates files in sourceFolder. For each MP3 file, handle_file() is called
+    """Iterates files in sourceFolder. For each MP3 file, get_file_metadata() is called
     """
     print("Reading folder contents...")
     metaData = []
