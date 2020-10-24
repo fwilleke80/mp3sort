@@ -21,16 +21,19 @@ except ImportError:
 def get_file_metadata(filePath):
     """Reads the ID3 tag of the passed MP3 file, and returns the metadata
     """
-    mp3File = eyed3.load(filePath)
-    metaData = {
-        "file": filePath,
-        "title": mp3File.tag.title,
-        "artist": mp3File.tag.artist,
-        "album": mp3File.tag.album,
-        "year": mp3File.tag.getBestDate(),
-        "album_artist": mp3File.tag.album_artist
-    }
-    return metaData
+    try:
+        mp3File = eyed3.load(filePath)
+        metaData = {
+            "file": filePath,
+            "title": mp3File.tag.title,
+            "artist": mp3File.tag.artist,
+            "album": mp3File.tag.album,
+            "year": mp3File.tag.getBestDate(),
+            "album_artist": mp3File.tag.album_artist
+        }
+        return metaData
+    except:
+        print("%s seems corrupted. Skipping this one." % os.path.basename(filePath))
 
 
 def iterate_folder(sourceFolder):
